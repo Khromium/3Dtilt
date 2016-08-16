@@ -10,8 +10,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +29,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener {
+/**
+ * 現状OPENGLで端末の傾きor読み込まれたファイルに則って
+ * ドロイド君が傾きます．
+ * 
+ * TODO: ファイル読み込み動的に
+ * TODO: 加速度対応
+ * TODO: グラフ表示
+ */
+public class MainActivity extends AppCompatActivity implements SensorEventListener, View.OnClickListener {
     private GLSurfaceView glSurfaceView;
 
     protected final static double RAD2DEG = 180 / Math.PI;
@@ -198,37 +204,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
 
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {//よく考えたらいらなかった
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 }
