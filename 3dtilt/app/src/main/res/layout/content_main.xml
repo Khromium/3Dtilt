@@ -20,8 +20,48 @@
             android:id="@+id/gls"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/isreal" />
+
+        <Switch
+            android:id="@+id/isreal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="リアルタイム更新" />
+
+        <TextView
+            android:id="@+id/datatext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/gls"
+            android:text="data text" />
+
+        <Button
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/datatext"
+            android:text="センサtest.txt読み込み" />
+
+        <ImageButton
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/load"
+            android:src="@android:drawable/ic_media_play" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time:"
+            android:layout_below="@+id/load"
+            android:layout_toEndOf="@+id/startButton" />
     </RelativeLayout>
 
 
